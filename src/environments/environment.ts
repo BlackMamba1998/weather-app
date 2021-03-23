@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
 
-  // OVDJE STAVITE SVOJ API KEY
+  // 3d427ed4af754685969155716212203
 
-  apiKey: 'api key'
+  apiKey: '3d427ed4af754685969155716212203'
 };
 
 /*

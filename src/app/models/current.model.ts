@@ -15,7 +15,11 @@ export interface Current {
   vis_km: number;
   uv: number;
   gust_kph: number;
-  air_quality: AirQuality
+  air_quality: AirQuality;
+  sunrise: string;
+  sunset: string;
+  moonrise: string;
+  moonset: string;
 }
 
 export class Current  {
@@ -33,6 +37,11 @@ export class Current  {
     public vis_km: number,
     public uv: number,
     public gust_kph: number,
-    public air_quality: AirQuality
+    public air_quality: AirQuality,
+    public sunrise: string,
+    public sunset: string,
+    public moonrise: string,
+    public moonset: string,
+
   ) {}
 }

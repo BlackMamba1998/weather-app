@@ -6,6 +6,10 @@
       <div style="font-size: 3rem; font-weight: bold;">{{currentWeather.current.temp_c}} °C</div>
       <div>Wind: {{currentWeather.current.wind_kph}} km/h {{currentWeather.current.wind_dir}}</div>
       <div>{{currentWeather.current.condition.text}}</div>
+      <div>Pressure: {{currentWeather.current.pressure_mb}} mb</div>
+      <div>Precip: {{currentWeather.current.precip_mm}} mm</div>
+      <div>Uv: {{currentWeather.current.uv}} </div>
+
     </div>
 
     <div class="current-icon" style="margin: 1rem">
@@ -14,10 +18,18 @@
 
   </div>
 
-  <div class="sunrise">
+  <div class="sunrise" style="margin: 1rem">
     <div style="font-size: 1.5rem; margin: 1rem">Sunrise & sunset </div>
     <!-- <div> Real feel: {{currentWeather.current.condition.text}}</div> -->
-  </div>
+    <div class="curredt-data" style="margin: 1rem">
+      <div>Sunset: {{forecast.astronomy.astro.sunset}}</div>
+      <div>Moonset: {{forecast.astronomy.astro.moonset}}</div>
+      <div>Sunrise: {{forecast.astronomy.astro.sunrise}}</div>
+      <div>Moonrise: {{forecast.astronomy.astro.moonrise}}</div>
+      <div>Moon Phase: {{forecast.astronomy.astro.moon_phase}}</div>
+      <div>Moon Illumination: {{forecast.astronomy.astro.moon_illumination}}</div>
+    </div>
+   </div>
 
 
 
@@ -32,13 +44,13 @@
             <a class="btn-text" routerLink="/air">  Show Details  <img class="icon-s" src="/assets/images/airqv.svg" alt="" /></a>
           </button>
         </div>
-    </div>
+      </div>
 
     </div>
 
     <div *ngIf="accessories && accessories.length > 0">
-        <p class="">Accessories</p>
-        <!--Ovdje ubacite for petlju i ispisite ikonice te implementirajte tooltipove za preporucenu opremu-->
+      <p class="">Accessories</p>
+      <!--Ovdje ubacite for petlju i ispisite ikonice te implementirajte tooltipove za preporucenu opremu-->
     </div>
   </div>
 

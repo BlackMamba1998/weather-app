@@ -2,6 +2,7 @@ import { CurrentWeatherData } from './../models/current-weather-data.model';
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { Accessory } from '../models/accessory.model';
+import { Forecast } from './../models/forecast.model';
 
 @Component({
   selector: 'app-current-weather-data',
@@ -12,6 +13,7 @@ export class CurrentWeatherDataComponent implements OnInit {
 
   currentWeather: CurrentWeatherData;
   airQualityAndWeather: CurrentWeatherData;
+  forecast: Forecast;
   accessories: Accessory[] = [];
 
   constructor( private weatherService: WeatherService ) { }
@@ -19,6 +21,7 @@ export class CurrentWeatherDataComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentWeatherData();
     this.getWeatherAndAirQuality();
+    this.getForecast();
   }
 
   getCurrentWeatherData() {
@@ -36,5 +39,16 @@ export class CurrentWeatherDataComponent implements OnInit {
     }
     )
   }
+
+  getForecast() {
+    this.weatherService.getForecast().subscribe((response) => {
+      this.forecast = response.body,
+        console.log(this.forecast)
+    }
+    )
+
+  }
+
+
 
 }
